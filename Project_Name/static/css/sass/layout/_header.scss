@@ -1,0 +1,182 @@
+body {
+  font-family: 'Cairo', sans-serif;
+}
+
+header {
+  .active-nav {
+    border-bottom: 2px solid #A686F0;
+  }
+
+  .login {
+    border: 1px solid #707070;
+    border-radius: 0 !important;
+    padding: 14px 20px !important;
+    font-size: 16px;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+
+  .logo {
+    img {
+      height: 79px;
+      width: 208px;
+    }
+
+    border-bottom: 1px solid #707070;
+  }
+
+  nav {
+    .btn-group {
+      button {
+        border: 1px solid #70707080;
+
+        border-radius: 0 !important;
+
+        &:hover {
+          background-color: #B296F6;
+          border: 1px solid white;
+          color: white;
+        }
+      }
+    }
+
+    ul {
+      li {
+        a {
+          color: black !important;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .header {
+    height: calc(100vh - 135px) !important;
+
+    @media #{$xs} {
+      height: auto !important;
+    }
+
+    @media #{$sm} {
+      height: auto !important;
+    }
+
+    .header-content {
+      @media #{$xs} {
+        display: block !important;
+      }
+    }
+
+    .img {
+      width: 50% !important;
+
+      @media #{$xs} {
+        width: 100% !important;
+      }
+
+      @media #{$sm} {
+        width: 100% !important;
+      }
+
+      img {
+        object-fit: cover;
+
+        @media #{$xs} {
+          width: 100%;
+        }
+
+        @media #{$sm} {
+          width: 100%;
+        }
+      }
+    }
+
+    .header-text {
+      margin-top: 80px;
+      width: 50%;
+
+      margin-right: -100px;
+
+      @media #{$xs} {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 10px;
+
+      }
+
+      @media #{$sm} {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 10px;
+
+      }
+
+      h1 {
+        font-weight: bold;
+        font-size: 50px;
+        color: black;
+
+      }
+
+      span {
+        color: #B296F6;
+        font-size: 50px;
+        font-weight: bold;
+        border: 2px solid #B296F6;
+        display: inline-block;
+        background-color: #F3F3F3;
+        padding: 0px 10px;
+        margin-top: 20px;
+        margin-bottom: 38px;
+
+      }
+
+      P {
+        color: black;
+        opacity: 0.5;
+
+      }
+
+      form {
+        border: 1px solid #707070;
+        width: 430px;
+
+        @media #{$xs} {
+          // margin-top: 10px;
+          width: auto;
+
+        }
+        @media #{$sm} {
+          margin-top: 10px;
+          width: auto;
+
+        }
+
+        a {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100px;
+          background-color: #B296F6;
+          border-radius: 0 !important;
+          color: white;
+          height: 100%;
+
+          input::placeholder {
+            color: black;
+            opacity: 0.5;
+          }
+
+          img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+
+
+    }
+  }
+}

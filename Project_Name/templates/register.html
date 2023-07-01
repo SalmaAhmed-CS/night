@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{%load static%}
+
+<html dir="rtl" lang="ar">
+<link rel="stylesheet" type="text/css" href="{% static 'css/login_page.css'%}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/home_page.css'%}" />
+<link rel="Icon" href="{% static 'img/logo1.png'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href= "{% static 'css/bootstrap.rtl.min.css'%}">
+    <link rel="stylesheet" href=" {% static 'css/home.css'%}">
+    <link rel="stylesheet" href=" {% static 'css/modal.css'%}">
+    <link rel="stylesheet" href="  {% static 'css/fave-recipes.css.css'%}">
+    <link rel="stylesheet" href= " {% static 'css/bootstrap.rtl.min.css'%} ">
+
+
+<head>
+
+<body>
+
+
+
+    <div class="modal fade show " style="display: block;" id="signUpModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-block border-bottom-0">
+                    <!-- <button id="closeModal" type="button" class="btn-close close-signup" data-bs-dismiss="modal"
+                        aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <!-- LOGIN  -->
+
+<header>
+        <div class="logo d-flex justify-content-center">
+            <a href="{%url 'index' %}"><img style="width:250px; height:150px;" src=" {% static 'img/logo1.png'%}" alt=""></a>
+        </div>
+        <!-- LOGO -->
+        <!-- START NAVBAR  -->
+        <nav postion="right" class="navbar navbar-expand-lg navbar-light">
+            <div  class="container">
+
+                <div class="collapse navbar-collapse justify-content-between " id="navbarScroll">
+                    <ul class="navbar-nav offset-md-4  my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
+                        {% if user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link active-nav " aria-current="page" href="{%url 'profile' %}">الملف الشخصي</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link  " aria-current="page" href="{%url 'recipes_page' %}">الوصفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'logout' %}">تسجيل خروج</a>
+                        </li>
+                        {%else%}
+                         <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'login' %}">تسجيل دخول</a>
+                        </li>
+                        {%endif%}
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+</header>
+
+                    <div id="sign-up-form">
+<form action ='register' method="post">
+        {%csrf_token%}
+
+  <div class="container">
+    <h1>تسجيل جديد</h1>
+    <p>أنشئ حساب للحصول على توصيات أفضل</p>
+    <hr>
+       {% for message in messages%}
+      <span>{{message}} </span>
+      {% endfor %}
+     <div class="modal-body">
+    <label for="first_name"><b>الاسم الأول</b></label>
+    <input type="text" placeholder="الاسم الأول" name="first_name" required>
+   <label for="last_name"><b>الاسم الاخير</b></label>
+    <input type="text" placeholder="الاسم الاخير" name="last_name" required>
+      <label for="username"><b>اسم المستخدم</b></label>
+    <input type="text" placeholder="اسم المستخدم" name="username" required>
+      <label for="email"><b>البريد الإلكتروني</b></label>
+         <br>
+    <input type="email" placeholder="البريد الالكتروني" name="email"  required>
+         <br>
+    <label for="password"><b>كلمة المرور</b></label>
+    <input type="password" placeholder="كلمة المرور" name="password1" required>
+
+    <label for="pswrepeat"><b>إعادة كلمة المرور</b></label>
+    <input type="password" placeholder="اعادة كلمة المرور" name="password2" required>
+     </div>
+    <div class="modal-body">
+
+      <label for="allergy"><b>اختر المكون الذي يسبب لك حساسية</b></label>
+      <br><br>
+    <input type="radio" id="type4" name="allergy" value="قمح">
+    <label for="type1">قمح</label><br>
+    <input type="radio" id="type5"  name="allergy" value="بيض">
+    <label for="type2">بيض</label><br>
+    <input type="radio" id="type6" name="allergy" value="حليب">
+    <label for="type3">حليب</label>
+        <br>
+        <input type="radio" id="type٧" name="allergy" value="لايوجد">
+    <label for="type3">لايوجد</label>
+
+    </div>
+    <div class="clearfix">
+
+     <a href="{%url 'login' %}"><button  type="submit" style="background-color: #422E7E;"> تسجيل </button></a>
+    </div>
+  </div>
+</form>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- END LOGIN MODAL -->
+
+    <!-- BLUR EFFECT -->
+    <div class="blur-effect d-none" id="blurEffectElement">
+
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/js.js"></script>
+</body>
+
+</html>

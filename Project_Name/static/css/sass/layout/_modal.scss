@@ -1,0 +1,23 @@
+.modal {
+    .facebook {
+        background-color: #3B5998;
+        color: white;
+    }
+
+    .twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .link {
+        a {
+            color: $second-color;
+            font-weight: bold;
+        }
+    }
+
+    input[type="email"]::placeholder {
+        text-align: right;
+    }
+
+}

@@ -1,0 +1,116 @@
+.header-content {
+    background-image: url("./../images/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.png");
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+
+    h1 {
+        font-weight: bold;
+    }
+
+}
+
+.recipe-img {
+
+    a {
+
+        @media #{$xs} {
+            transform: translateX(0);
+        }
+
+        @media #{$sm} {
+            transform: translateX(0);
+        }
+
+        @media #{$md} {
+            transform: translateX(0);
+        }
+
+        @media #{$lg} {
+            transform: translateX(137px);
+        }
+
+    }
+
+    .details {
+
+        @media #{$xs} {
+            margin-right: 0;
+        }
+
+        @media #{$sm} {
+            margin-right: 0;
+        }
+
+        @media #{$md} {
+            margin-right: 0;
+        }
+
+        @media #{$lg} {
+            margin-right: 60px;
+        }
+    }
+
+}
+
+.how-to {
+    .component {
+        ul {
+            li {
+                position: relative;
+                padding-right: 20px;
+                margin-bottom: 10px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: 5px;
+                    height: 10px;
+                    width: 10px;
+                    background-color: #A686F0;
+                    border-radius: 50%;
+                }
+            }
+
+        }
+    }
+
+    .how-to-prepare {
+        ul {
+            li {
+                padding: 30px 50px 30px 0;
+                background-color: #F9F9F9;
+                border: 1px solid #dadadaa6;
+                margin: 5px 0;
+            }
+        }
+    }
+}
+
+.related-recipes {
+
+    margin-top: 60px;
+
+    h2 {
+        text-align: center;
+
+        &::after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            bottom: -10px;
+            background-color: #B296F6;
+            height: 7px;
+            width: 100px;
+            transform: translateX(-50%);
+
+        }
+    }
+
+
+}
+
+.btn-bg {
+    background-color: #A686F0;
+}

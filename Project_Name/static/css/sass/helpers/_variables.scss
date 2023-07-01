@@ -1,0 +1,33 @@
+$xs: "(max-width: 575.98px)";
+$sm: "(min-width: 576px) and (max-width:767px)";
+$md: "(min-width: 768px)";
+$lg: "(min-width: 992px)";
+$xl: "(min-width : 1200px)";
+$xxl: "(min-width : 1366px)";
+$primary-color: #7471AC;
+$second-color: #B296F6;
+
+
+
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+.bg-second {
+  background-color: $second-color !important;
+}
+
+body {
+  font-family: "Cairo", sans-serif !important;
+
+  input,
+  textarea,
+  button,
+  .btn {
+    box-shadow: none !important;
+  }
+}
+
+nav {
+  margin-bottom: 0 !important;
+}

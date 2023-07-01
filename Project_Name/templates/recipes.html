@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+{%load static%}
+   <head>
+            <title>توت</title>
+            <link rel="Icon" href="{% static 'img/logo1.png'%}">
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="Icon" href="{% static 'img/logo.png'%}">
+            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href= "{% static 'css/bootstrap.rtl.min.css'%}">
+            <link rel="stylesheet" href=" {% static 'css/home.css'%}">
+            <link rel="stylesheet" href=" {% static 'css/modal.css'%}">
+            <link rel="stylesheet" href="  {% static 'css/fave-recipes.css.css'%}">
+           <link rel="stylesheet" href=" {% static 'css/recipes.css'%}" />
+   </head>
+
+    <body>
+    <header>
+        <div class="logo d-flex justify-content-center">
+            <a href="{%url 'index' %}"><img src=" {% static 'img/logo1.png'%}" alt=""></a>
+        </div>
+        <!-- LOGO -->
+        <!-- START NAVBAR  -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+
+                <div class="collapse navbar-collapse justify-content-between " id="navbarScroll">
+                    <ul class="navbar-nav offset-md-4  my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
+                        {% if user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'profile' %}">الملف الشخصي</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active-nav " aria-current="page" href="{%url 'recipes_page' %}">الوصفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'logout' %}">تسجيل خروج</a>
+                        </li>
+                        {%else%}
+                         <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active-nav " aria-current="page" href="{%url 'recipes_page' %}">الوصفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'register' %}">تسجيل جديد</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'login' %}">تسجيل دخول</a>
+                        </li>
+                        {%endif%}
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <div style="background-image: url({%static 'img/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.png'%})" class="header-content d-flex justify-content-center align-items-center">
+            <h1>الوصفات</h1>
+        </div>
+        <!-- END HEADER CONTENT -->
+
+    </header>
+<div class="recipes">
+
+        <div class="container">
+
+            <div class="recipes-items mt-5">
+                <div class="row">
+                      {% for item in recipes_info %}
+
+                         <div class=" col-md-6 col-xl-3 mb-3">
+                        <div class="recipe-item border-1 rounded">
+                            <div class="recipe-img img-fluid">
+                                <img height="258" width="288" src="{{item.image.url}}"
+                                    alt="">
+                            </div>
+                            <h6>{{item.name}}</h6>
+                            {% if user.is_authenticated %}
+
+                            <a href="{% url 'Recipe_page' item.pk %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                            {%else%}
+                            <a href="{% url 'recipe_page2' item.pk %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                            {%endif%}
+
+                        </div>
+
+                    </div>
+                    {%endfor%}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+
+
+  <!-- START FOOTER -->
+    <footer class="mt-5">
+        <div style=" background-image:url({% static 'img/menu-bg-four.png'%}) " class="upper-footer text-center">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h4 class="mb-0">ابقى على علم بأحدث وصفات ونصائح</h4>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div  style="background-color: #422E7E;" class="lower-footer">
+            <div class="container">
+                <div class="img img-fluid d-flex justify-content-center align-items-center">
+                    <img style="width:250px; height:150px;" src="{% static 'img/logo1.png'%}" alt="logo">
+
+                </div>
+                <div class="navigation">
+                    <ul class="list-unstyled d-flex justify-content-center ml-2">
+                        <li><a href="{%url 'index' %}">الرئيسية</a></li>
+                           <li><a href="{%url 'recipes_page' %}">الوصفات</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+
+    </body>

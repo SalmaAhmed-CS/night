@@ -1,0 +1,49 @@
+.categories {
+    background-color: #DADADA;
+    padding: 70px 0;
+
+    h2 {
+        &::after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            bottom: -10px;
+            background-color: #B296F6;
+            height: 7px;
+            width: 100px;
+            transform: translateX(-50%);
+        }
+    }
+
+    .cate-items {
+        margin-top: 27px;
+
+        .cate-item {
+            margin-top: 70px;
+            background-color: white;
+            padding: 50px 40px !important;
+
+            img {
+                height: 50px;
+                width: 50px;
+            }
+
+            h5 {
+                margin-top: 30px;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+.blur-effect{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(4px);
+    
+   
+}

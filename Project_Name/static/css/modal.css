@@ -1,0 +1,55 @@
+.bg-primary {
+  background-color: #7471AC !important;
+}
+
+.bg-second {
+  background-color: #B296F6 !important;
+}
+
+body {
+  font-family: "Cairo", sans-serif !important;
+}
+
+body input,
+body textarea,
+body button,
+body .btn {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+nav {
+  margin-bottom: 0 !important;
+}
+
+.modal .facebook {
+  background-color: #3B5998;
+  color: white;
+}
+
+.modal .twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.modal .link a {
+  color: #B296F6;
+  font-weight: bold;
+}
+
+.modal input[type="email"]::-webkit-input-placeholder {
+  text-align: right;
+}
+
+.modal input[type="email"]:-ms-input-placeholder {
+  text-align: right;
+}
+
+.modal input[type="email"]::-ms-input-placeholder {
+  text-align: right;
+}
+
+.modal input[type="email"]::placeholder {
+  text-align: right;
+}
+/*# sourceMappingURL=modal.css.map */

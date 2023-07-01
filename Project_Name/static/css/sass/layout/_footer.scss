@@ -1,0 +1,71 @@
+footer {
+
+    .upper-footer {
+        padding: 70px 0;
+        background: url('./../images/menu-bg-four.png');
+        background-size: contain;
+        background-position: center center;
+
+        h4 {
+            @media #{$xs} {
+                font-size: 15px;
+            }
+        }
+
+        img {
+            height: 50px;
+        }
+
+
+        form {
+            border: 1px solid #707070;
+            width: 430px;
+            margin-top: 60px;
+
+            @media #{$xs} {
+                margin-top: 10px;
+
+            }
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100px;
+                background-color: #B296F6;
+                border-radius: 0 !important;
+                color: white;
+                height: 100%;
+
+                input::placeholder {
+                    color: black;
+                    opacity: 0.5;
+                }
+
+                img {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    .lower-footer {
+        background-color: #A686F0;
+        padding: 20px 0;
+
+        ul {
+            padding-top: 45px;
+
+            li {
+                margin-left: 20px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+
+    }
+}

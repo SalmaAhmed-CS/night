@@ -1,0 +1,59 @@
+.fav {
+    margin-top: 35px;
+
+    .item-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item {
+        overflow: hidden;
+        background-color: #EFEFEF;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px !important;
+        height: 80px;
+        border-radius: 5px;
+        padding: 0 20px;
+
+        // &.fav-item {
+        //     background-color: #A686F0;
+        //     color: white;
+        // }
+
+        span {
+            text-align: center;
+        }
+    }
+}
+
+.search-bar {
+    border: 1px solid #707070;
+    width: 430px;
+    input{
+        border: 0;
+    }
+    a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        background-color: #B296F6;
+        border-radius: 0 !important;
+        color: white;
+        height: 100%;
+
+        input::placeholder {
+            color: black;
+            opacity: 0.5;
+        }
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}

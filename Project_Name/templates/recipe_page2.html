@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" xmlns="http://www.w3.org/1999/html">
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>توت</title>
+    <link rel="Icon" href="{% static 'img/logo1.png'">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="  {% static 'css/recipe-2.css'%}">
+    <link rel="stylesheet" href="  {% static 'css/modal.css'%} ">
+    <link rel="stylesheet" href= " {% static 'css/bootstrap.rtl.min.css'%} ">
+        <link rel="Icon" href="{% static 'img/logo.png'%}">
+
+
+
+
+</head>
+<body>
+<!-- LOGO  -->
+<header>
+        <div class="logo d-flex justify-content-center">
+            <a href="{%url 'index' %}"><img src=" {% static 'img/logo1.png'%}" alt=""></a>
+        </div>
+        <!-- LOGO -->
+        <!-- START NAVBAR  -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+
+                <div class="collapse navbar-collapse justify-content-between " id="navbarScroll">
+                    <ul class="navbar-nav offset-md-4  my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
+                        {% if user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="nav-link active-nav" aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'profile' %}">الملف الشخصي</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link  " aria-current="page" href="{%url 'recipes_page' %}">الوصفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'logout' %}">تسجيل خروج</a>
+                        </li>
+                        {%else%}
+                         <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'recipes_page' %}">الوصفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'register' %}">تسجيل جديد</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'login' %}">تسجيل دخول</a>
+                        </li>
+                        {%endif%}
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+</header>
+
+        <div style="background-image: url({%static 'img/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.png'%})" class="header-content d-flex justify-content-center align-items-center">
+            <h1>الوصفات</h1>
+        </div>
+        <!-- END HEADER CONTENT -->
+
+ <!-- CONTAINER WITH 8 COL -->
+    <div class="container">
+        <div class="col-xl-11">
+            <!-- START RECIPIE Details -->
+            <div class="recipe-details my-5">
+                <h3 class="mb-3">{{Allـrecipes.name}}</h3>
+                <div class="recipe-img p-1  border-3 rounded-3 img-fluid">
+                    <img   height="500px" width="1150px" src="{{Allـrecipes.image.url}}" alt="">
+                    <div class="d-flex justify-content-between justify-content-lg-around mt-4">
+                        <span  class="text-black-50 d-flex align-items-center">سجل دخولك  لتحظى بتجربةأفضل !</span>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- END RECIPIE Details -->
+            <!-- START HOW TO PREPARE  -->
+            <div class="how-to">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div   class="component">
+                                <a  style="background-color: #422E7E;" href="" class="rounded-0 btn btn-bg text-white  w-100">المكونات</a>
+                                <ul class="mt-4 list-unstyled">
+
+                                     <li name ='step1'>{{All_ingredients.ing1}}</li>
+                                     <li name ='step2'>{{All_ingredients.ing2}}</li>
+                                     <li name ='step3'>{{All_ingredients.ing3}}</li>
+                                     {% if All_ingredients.ing4 != "-" %}
+                                     <li name ='step4'>{{All_ingredients.ing4}}</li>
+                                     {%endif%}
+                                     {% if All_ingredients.ing5 != "-" %}
+                                     <li name ='step5'>{{All_ingredients.ing5}}</li>
+                                     {%endif%}
+                                     {% if All_ingredients.ing6 != "-" %}
+                                     <li name ='step6'>{{All_ingredients.ing6}}</li>
+                                    {%endif%}
+                                     {% if All_ingredients.ung7 != "-" %}
+                                     <li name ='step7'>{{All_ingredients.ing7}}</li>
+                                    {%endif%}
+                                     {% if All_ingredients.ing8 != "-" %}
+                                     <li name ='step8'>{{All_ingredients.ing8}}</li>
+                                    {%endif%}
+                                     {% if All_ingredients.ing9 != "-" %}
+                                     <li name ='step9'>{{All_ingredients.ing9}}</li>
+                                    {%endif%}
+                                     {% if All_ingredients.ing10 != "-" %}
+                                     <li name ='step10'>{{All_ingredients.ing10}}</li>
+                                    {%endif%}
+                                     {% if All_ingredients.ing11 != "-" %}
+                                     <li name ='step11'>{{All_ingredients.ing11}}</li>
+                                    {%endif%}
+                                     {% if All_ingredients.ing12 != "-" %}
+                                     <li name ='step12'>{{All_ingredients.ing12}}</li>
+                                    {%endif%}
+                                    {% if All_ingredients.ing13 != "-" %}
+                                     <li name ='step13'>{{All_ingredients.ing13}}</li>
+                                    {%endif%}
+                                    {% if All_ingredients.ing14 != "-" %}
+                                     <li name ='step14'>{{All_ingredients.ing14}}</li>
+                                    {%endif%}
+                                    {% if All_ingredients.ing15 != "-" %}
+                                     <li name ='step15'>{{All_ingredients.ing15}}</li>
+                                    {%endif%}
+                                    {% if All_ingredients.ing16 != "-" %}
+                                     <li name ='step16'>{{All_ingredients.ing16}}</li>
+                                    {%endif%}
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="how-to-prepare">
+                                <a href="" style="background-color: #422E7E;" class="rounded-0 btn text-white btn-bg w-100">طريقة التحضير</a>
+                                <ul class="mt-4 list-unstyled">
+                                     <li name ='step1'>{{All_steps.step1}}</li>
+                                     <li name ='step2'>{{All_steps.step2}}</li>
+                                     <li name ='step3'>{{All_steps.step3}}</li>
+                                     {% if All_steps.step4 != "-" %}
+                                     <li name ='step4'>{{All_steps.step4}}</li>
+                                     {%endif%}
+                                     {% if All_steps.step5 != "-" %}
+                                     <li name ='step5'>{{All_steps.step5}}</li>
+                                     {%endif%}
+                                     {% if All_steps.step6 != "-" %}
+                                     <li name ='step6'>{{All_steps.step6}}</li>
+                                    {%endif%}
+                                     {% if All_steps.step7 != "-" %}
+                                     <li name ='step7'>{{All_steps.step7}}</li>
+                                    {%endif%}
+                                     {% if All_steps.step8 != "-" %}
+                                     <li name ='step8'>{{All_steps.step8}}</li>
+                                    {%endif%}
+                                     {% if All_steps.step9 != "-" %}
+                                     <li name ='step9'>{{All_steps.step9}}</li>
+                                    {%endif%}
+                                     {% if All_steps.step10 != "-" %}
+                                     <li name ='step10'>{{All_steps.step10}}</li>
+                                    {%endif%}
+                                     {% if All_steps.step11 != "-" %}
+                                     <li name ='step11'>{{All_steps.step11}}</li>
+                                    {%endif%}
+                                     {% if All_steps.step12 != "-" %}
+                                     <li name ='step12'>{{All_steps.step12}}</li>
+                                    {%endif%}
+                                    {% if All_steps.step13 != "-" %}
+                                     <li name ='step13'>{{All_steps.step13}}</li>
+                                    {%endif%}
+                                    {% if All_steps.step14 != "-" %}
+                                     <li name ='step14'>{{All_steps.step14}}</li>
+                                    {%endif%}
+                                    {% if All_steps.step15 != "-" %}
+                                     <li name ='step15'>{{All_steps.step15}}</li>
+                                    {%endif%}
+                                    {% if All_steps.step16 != "-" %}
+                                     <li name ='step16'>{{All_steps.step16}}</li>
+                                    {%endif%}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END HOW TO PREPARE -->
+        </div>
+    </div>
+
+   <h2 class="text-center position-relative ">الوصفات الأكثر زيارة </h2>
+                   <div class="d-flex justify-content-between justify-content-lg-around mt-4">
+                        <span  class="text-black-50 d-flex align-items-center">سجل دخولك  لتحظى بتجربةأفضل !</span>
+
+                    </div>
+
+ <!-- START RECPIES -->
+    <div class="recipes">
+        <div class="container">
+
+            <div class="recipes-items mt-5">
+                <div class="row">
+                          {% for recpie in popular %}
+                            {% if forloop.counter <= 8 %}
+                    <div class=" col-md-6 col-xl-3 mb-3">
+                        <div class="recipe-item border-1 rounded">
+                            <div class="recipe-img img-fluid">
+                                <img height="258" width="288"  style=" height='250px' width='200px'"  src="{{recpie.image.url}}"
+                                    alt="">
+                            </div>
+                            <h6>{{recpie.name}}</h6>
+
+                            <a href="{% url 'recipe_page2' recpie.id %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                        </div>
+                    </div>
+                  {%endif%}
+             {%endfor%}
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+
+
+ <!-- START FOOTER -->
+    <footer class="mt-5">
+        <div style=" background-image:url({% static 'img/menu-bg-four.png'%}) " class="upper-footer text-center">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h4 class="mb-0">ابقى على علم بأحدث وصفات ونصائح</h4>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div  style="background-color: #422E7E;" class="lower-footer">
+            <div class="container">
+                <div class="img img-fluid d-flex justify-content-center align-items-center">
+                    <img style="width:250px; height:150px;" src="{% static 'img/logo1.png'%}" alt="logo">
+
+                </div>
+                <div class="navigation">
+                    <ul class="list-unstyled d-flex justify-content-center ml-2">
+                        <li><a href="{%url 'index' %}">الرئيسية</a></li>
+                           <li><a href="{%url 'recipes_page' %}">الوصفات</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+</body>
+

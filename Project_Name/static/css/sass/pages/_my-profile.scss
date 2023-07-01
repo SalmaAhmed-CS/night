@@ -1,0 +1,86 @@
+.header-content {
+    background-image: url("./../images/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.png");
+    height: 50vh;
+    background-size: cover;
+    background-position: center center;
+
+    h1 {
+        font-weight: bold;
+    }
+
+}
+
+.profile {
+    .acount-options {
+        background-color: #F7F7F7;
+
+        ul {
+            li {
+                padding: 20px;
+            }
+        }
+    }
+
+    .profile-data {
+        border: 0.5px solid #707070;
+        padding: 30px;
+
+        .profile-pic {
+            .pic {
+                height: 200px;
+                width: 200px;
+                border: 3px solid #A686F0;
+                border-radius: 50%;
+            }
+        }
+
+        .profile-details {
+            margin-top: 80px;
+            padding: 20px;
+            .detail-group{
+                margin-bottom: 30px;
+                h5{
+                    font-size: 30px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                }
+                p{
+                    color: #959595;
+                    background-color: #F9F9F9;
+                    padding: 10px  20px;
+                    border: 0.5px solid #707070;
+                    border-radius: 4px;
+                }
+                .fav{
+                    margin-top: 35px;
+                    .item-container{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .item{
+                        overflow: hidden;
+                        background-color: #EFEFEF;
+                        margin-bottom: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 5px;
+                        padding: 0 20px;
+                        &.fav-item{
+                            background-color: #A686F0;
+                            color: white;
+                        }
+                        span{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+         
+        }
+    }
+
+}

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+{%load static%}
+   <head>
+            <title>توت</title>
+            <link rel="Icon" href="{% static 'img/logo1.png'%}">
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href= "{% static 'css/bootstrap.rtl.min.css'%}">
+            <link rel="stylesheet" href=" {% static 'css/home.css'%}">
+            <link rel="stylesheet" href=" {% static 'css/modal.css'%}">
+            <link rel="stylesheet" href="  {% static 'css/fave-recipes.css.css'%}">
+            <link rel="stylesheet" href=" {% static 'css/search.css'%}">
+    </head>
+
+    <body>
+        <header>
+             <!-- LOGO  -->
+        <div class="logo d-flex justify-content-center">
+            <a href="{%url 'index' %}"><img src=" {% static 'img/logo1.png'%}" alt=""></a>
+        </div>
+        <!-- LOGO -->
+        <!-- START NAVBAR  -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+
+                <div class="collapse navbar-collapse justify-content-between " id="navbarScroll">
+                    <ul class="navbar-nav offset-md-4  my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
+                        {% if user.is_authenticated %}
+
+                        <li class="nav-item">
+                            <a class="nav-link active-nav" aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'recipes_page' %}">الوصفات</a>
+                        </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'profile' %}">الملف الشخصي</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'logout' %}">تسجيل خروج</a>
+                        </li>
+
+                        {%else%}
+                         <li class="nav-item">
+                            <a class="nav-link active-nav" aria-current="page" href="{%url 'index' %}">الرئيسية</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'recipes_page' %}">الوصفات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="{%url 'register' %}">تسجيل جديد</a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{%url 'login' %}">تسجيل دخول</a>
+                        </li>
+                        {%endif%}
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <!-- END NAVBAR -->
+        <!-- START HEADER -->
+
+
+              {% if Search_Results%}
+               <!-- START HEADER -->
+
+        <div class="header position-relative   vh-100 overflow-hidden p-4 ">
+            <div class="container h-100">
+                <div class="header-content d-md-flex h-100">
+                    <div class="img h-100 img-fluid">
+                        <img class="h-100 w-100" src= "{% static 'img/hawaiian-tuna-poke-bowl-flat-lay-photography.png'%}" alt="">
+                    </div>
+
+                </div>
+                <div class="search-bar ">
+                    <div class="container d-flex justify-content-center align-items-center h-100">
+                        <form class="search-form overflow-hidden position-relative">
+                            <input class="form-control me-2" name="q" type="search" placeholder="ابحث عن وصفه"
+                                aria-label="Search">
+                                    <button  class="btn  img-fluid" type="submit">بحث<img src="{% static 'img/vuesax-linear-search-normal.png'%}"></button>
+
+<!--                            <a class="btn  img-fluid" type="submit"><img src="{% static 'img/vuesax-linear-search-normal.png'%}"-->
+<!--                                    class="" alt=""></a>-->
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+            <h2 class="text-center position-relative ">نتائج البحث  </h2>
+
+            {% for item in Search_Results %}
+
+             <div class="col-lg-8">
+                    <div class="results">
+                        <div class="recipes">
+
+                            <div class="container">
+                                <div class="recipes-items mt-5">
+                                    <div class="row">
+                                        <div class="col-md-6  mb-3">
+
+                                        </div>
+                                        <div class="col-md-6  mb-3">
+                                            <div class="recipe-item border-1 rounded">
+                                                 <div class="recipe-img img-fluid">
+                                                    <img height="258" width="420"
+                                                        src="{{item.image.url}}"
+                                                        alt="" />
+                                                </div>
+
+
+                                                <h6>{{item.name}}</h6>
+                                                <div class="geners d-flex justify-content-between align-items-center">
+
+
+                                                </div>
+
+                                                {% if user.is_authenticated %}
+
+                                        <a href="{% url 'Recipe_page' item.pk %}"  style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                                        {%else%}
+                                        <a href="{% url 'recipe_page2' item.pk %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                                        {%endif%}
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}
+
+
+        <!--------------------------------------- END HEADER --------------------------------------------->
+
+
+            {%else%}
+
+
+
+                <div class="header  vh-100 overflow-hidden p-4 ">
+                    <div class="container h-100">
+                        <div class="header-content d-md-flex h-100">
+                            <div class="img h-100 img-fluid">
+                                <img class="h-100 w-100" src= "{% static 'img/hawaiian-tuna-poke-bowl-flat-lay-photography.png'%}" alt="">
+                            </div>
+                            <div class="header-text overflow-hidden text-white h-100">
+                                <div>
+                                    <h1>استمتع باشهى وأحلى</h1>
+                                    <span style="color:#422E7E; border-color:#422E7E;" >الوصفات</span>
+                                    <p>إكتشفي طريقة عمل اطباق متنوعة ولذيذة والتي لا بد ان تكون جزء من مطبخك لمائدة متجددة من
+                                        اطيب
+                                        الاكلات واشهى الاطباق الرئيسية من وصفات الخضر، الدجاج، اللحوم ، الاسماك والمأكولات
+                                        البحرية
+                                    </p>
+                                    <form class="search-form overflow-hidden position-relative">
+                                 <input class="form-control me-2" name="q" type="search" placeholder="ابحث عن وصفه"
+                                aria-label="Search">
+                                    <button  class="btn  img-fluid" type="submit">بحث<img src="{% static 'img/vuesax-linear-search-normal.png'%}"></button>
+
+<!--                            <a class="btn  img-fluid" type="submit"><img src="{% static 'img/vuesax-linear-search-normal.png'%}"-->
+<!--                                    class="" alt=""></a>-->
+                                  </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                     </div>
+
+                </div> <br><br>
+            {% for message in messages%}
+                        <h2 class="text-center position-relative ">{{message}} </h2>
+            {% endfor %}
+            {% if recommended1%}
+            <!-- recommended1-->
+            <h2 class="text-center position-relative "> وصفات مختارة لك </h2>
+
+             <!-- START RECPIES -->
+    <div class="recipes">
+        <div class="container">
+
+            <div class="recipes-items mt-5">
+                <div class="row">
+
+
+
+                     {% for item in recommended1  %}
+                     {% if forloop.counter <= 8 %}
+                    <div class=" col-md-6 col-xl-3 mb-3">
+                        <div class="recipe-item border-1 rounded">
+                            <div class="recipe-img img-fluid">
+                                <img height="258" width="288" src="{{item.image.url}}"
+                                    alt="">
+                            </div>
+                            <h6 style="height: 20px; max-height: 20px;">{{item.name}}</h6>
+
+                            <a href="{% url 'Recipe_page' item.pk %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                        </div>
+                    </div>
+{% endif %}
+                    {%endfor%}
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+
+
+
+            {%else%}
+              <!-- most-->
+                        <h2 class="text-center position-relative "> الوصفات الأكثر تفضيل </h2>
+
+            <!-- START RECPIES -->
+    <div class="recipes">
+        <div class="container">
+
+            <div class="recipes-items mt-5">
+                <div class="row">
+                                {% for item in most_popular %}
+                                {% if forloop.counter <= 8 %}
+                    <div class=" col-md-6 col-xl-3 mb-3">
+                        <div class="recipe-item border-1 rounded">
+                            <div class="recipe-img img-fluid">
+                                <img height="258" width="288" src="{{item.image.url}}"
+                                    alt="">
+                            </div>
+                            <h6>{{item.name}}</h6>
+                               {% if user.is_authenticated %}
+
+                            <a href="{% url 'Recipe_page' item.id %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                            {%else%}
+                            <a href="{% url 'recipe_page2' item.id %}"  style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                            {%endif%}
+
+
+                        </div>
+                    </div>
+            {%endif%}
+            {%endfor%}
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+
+            {%endif%}
+             <!-- START SALAD -->
+    <div class="salad">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="salad-description mt-5">
+                        <h3>سلطات</h3>
+
+                        <p>إنّ تحضير السلطات فنّ، بسبب تعدّد مكونانتها وطرق تحضيرها. فمن سلطة الخضار البسيطة الى السلطات
+                            المعقدة والتي تحتوي على مكونات كثيرة، تجدون على موقعنا كلّ الوصفات التي تناسبكم! تقدم
+                            السلطات عادة كطبق أولي قبل الأكل، إذ يعتبر البعض أنها تحضر المعدة لاستقبال الطعام، مسهلةً
+                            عملية الهضم. أما البعض الآخر، فيفضل تقديمها كطبق جانبي إلى جانب الأطباق الرئيسية</p>
+                        <div class="salad-collection mt-3  d-flex justify-content-between">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="img-fluid">
+                                        <img class="w-100 h-100" src="{% static 'img/chickpea-salad-070.png'%}" alt="">
+
+                                    </div>
+
+                                </div>
+                                <div class="col-4 ">
+                                    <div class="img-fluid">
+                                        <img class="w-100 h-100" src="{% static 'img/chicken-barbecu-salad1.png'%}" alt="">
+
+                                    </div>
+
+                                </div>
+                                <div class="col-4 ">
+                                    <div class="img-fluid">
+                                        <img class="w-100 h-100" src="{% static 'img/salad_1.png'%}" alt="">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="img-sec img-fluid">
+                        <img class="h-100 w-100" src="{% static 'img/salad-6-removebg-preview.png'%}" alt="">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+            <br><br><hr>
+    <!-- END SALAD -->
+            {% if recommended2%}
+            <!-- recommended2-->
+            <h2 class="text-center position-relative ">وصفات مشابهة لتفضيلاتك </h2>
+
+      <!-- START RECPIES -->
+    <div class="recipes">
+        <div class="container">
+
+            <div class="recipes-items mt-5">
+                <div class="row">
+                                 {% for item in recommended2 %}
+                                {% if forloop.counter <= 20 %}
+
+                    <div class=" col-md-6 col-xl-3 mb-3">
+                        <div class="recipe-item border-1 rounded">
+                            <div class="recipe-img img-fluid">
+                                <img height="258" width="288" src="{{item.image.url}}"
+                                    alt="">
+                            </div>
+                            <h6>{{item.name}}</h6>
+
+                            <a href="{% url 'Recipe_page' item.recipeId %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                        </div>
+                    </div>
+                    {%endif%}
+                    {%endfor%}
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+
+            {%endif%}
+
+            {% if user.is_authenticated %}
+                        <!-- all rec with Recipe_page-->
+            <h2 class="text-center position-relative ">وصفات أخرى </h2>
+
+                       <!-- START RECPIES -->
+    <div class="recipes">
+        <div class="container">
+
+            <div class="recipes-items mt-5">
+                <div class="row">
+                    {% for recpie in recipe %}
+                    {% if forloop.counter <= 8 %}
+
+                    <div class=" col-md-6 col-xl-3 mb-3">
+                        <div class="recipe-item border-1 rounded">
+                            <div class="recipe-img img-fluid">
+                                <img height="258" width="288"src="{{recpie.image.url}}"
+                                    alt="">
+                            </div>
+                            <h6>{{recpie.name}}</h6>
+
+                            <a href="{% url 'Recipe_page' recpie.pk %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                        </div>
+                    </div>
+                   {%endif%}
+                   {%endfor%}
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+
+
+
+            {%else%}
+
+            <!-- all rec with login-->
+              <!-- START RECPIES -->
+    <div class="recipes">
+        <div class="container">
+
+            <div class="recipes-items mt-5">
+                <div class="row">
+                                 {% for recpie in recipe %}
+                                {% if forloop.counter <= 8 %}
+
+                    <div class=" col-md-6 col-xl-3 mb-3">
+                        <div class="recipe-item border-1 rounded">
+                            <div class="recipe-img img-fluid">
+                                <img height="258" width="288" src="{{recpie.image.url}}"
+                                    alt="">
+                            </div>
+                            <h6>{{recpie.name}}</h6>
+
+                            <a href="{% url 'recipe_page2' recpie.id %}" style="background-color: #422E7E;" class="show-recipe btn w-100 mt-4 text-white">عرض الوصفة</a>
+                        </div>
+                    </div>
+                    {%endif%}
+             {%endfor%}
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+            {%endif%}
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RECIPIES -->
+              {%endif%}
+        <!--------------------------------------- END HEADER --------------------------------------------->
+
+        </header>
+  <!-- START FOOTER -->
+    <footer class="mt-5">
+        <div style=" background-image:url({% static 'img/menu-bg-four.png'%}) " class="upper-footer text-center">
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h4 class="mb-0">ابقى على علم بأحدث وصفات ونصائح</h4>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <div  style="background-color: #422E7E;" class="lower-footer">
+            <div class="container">
+                <div class="img img-fluid d-flex justify-content-center align-items-center">
+                    <img style="width:250px; height:150px;" src="{% static 'img/logo1.png'%}" alt="logo">
+
+                </div>
+                <div class="navigation">
+                    <ul class="list-unstyled d-flex justify-content-center ml-2">
+                        <li><a href="{%url 'index' %}">الرئيسية</a></li>
+                           <li><a href="{%url 'recipes_page' %}">الوصفات</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    </body>
+
+
+</html>

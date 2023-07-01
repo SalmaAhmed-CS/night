@@ -1,0 +1,31 @@
+.header-content {
+    background-image: url("./../images/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.png");
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+
+    h1 {
+        font-weight: bold;
+    }
+
+}
+
+.recipes {
+    .show-more {
+        .btn {
+            width: 240px;
+            background-color: #F9F9F9;
+            border-radius: 36px !important;
+            padding: 18px 15px;
+
+
+
+        }
+    }
+
+    .recipes-items {
+        margin-top: 60px;
+    }
+
+
+}

@@ -1,0 +1,403 @@
+.bg-primary {
+  background-color: #7471AC !important;
+}
+
+.bg-second {
+  background-color: #B296F6 !important;
+}
+
+body {
+  font-family: "Cairo", sans-serif !important;
+}
+
+body input,
+body textarea,
+body button,
+body .btn {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+nav {
+  margin-bottom: 0 !important;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+}
+
+header .active-nav {
+  border-bottom: 2px solid #A686F0;
+}
+
+header .login {
+  border: 1px solid #707070;
+  border-radius: 0 !important;
+  padding: 14px 20px !important;
+  font-size: 16px;
+}
+
+header .login img {
+  margin-left: 10px;
+}
+
+header .logo {
+  border-bottom: 1px solid #707070;
+}
+
+header .logo img {
+  height: 79px;
+  width: 208px;
+}
+
+header nav .btn-group button {
+  border: 1px solid #70707080;
+  border-radius: 0 !important;
+}
+
+header nav .btn-group button:hover {
+  background-color: #B296F6;
+  border: 1px solid white;
+  color: white;
+}
+
+header nav ul li a {
+  color: black !important;
+  font-size: 18px;
+}
+
+header .header {
+  height: calc(100vh - 135px) !important;
+}
+
+@media (max-width: 575.98px) {
+  header .header {
+    height: auto !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  header .header {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  header .header .header-content {
+    display: block !important;
+  }
+}
+
+header .header .img {
+  width: 50% !important;
+}
+
+@media (max-width: 575.98px) {
+  header .header .img {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  header .header .img {
+    width: 100% !important;
+  }
+}
+
+header .header .img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+  header .header .img img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  header .header .img img {
+    width: 100%;
+  }
+}
+
+header .header .header-text {
+  margin-top: 80px;
+  width: 50%;
+  margin-right: -100px;
+}
+
+@media (max-width: 575.98px) {
+  header .header .header-text {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  header .header .header-text {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
+header .header .header-text h1 {
+  font-weight: bold;
+  font-size: 50px;
+  color: black;
+}
+
+header .header .header-text span {
+  color: #B296F6;
+  font-size: 50px;
+  font-weight: bold;
+  border: 2px solid #B296F6;
+  display: inline-block;
+  background-color: #F3F3F3;
+  padding: 0px 10px;
+  margin-top: 20px;
+  margin-bottom: 38px;
+}
+
+header .header .header-text P {
+  color: black;
+  opacity: 0.5;
+}
+
+header .header .header-text form {
+  border: 1px solid #707070;
+  width: 430px;
+}
+
+@media (max-width: 575.98px) {
+  header .header .header-text form {
+    width: auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  header .header .header-text form {
+    margin-top: 10px;
+    width: auto;
+  }
+}
+
+header .header .header-text form a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  background-color: #B296F6;
+  border-radius: 0 !important;
+  color: white;
+  height: 100%;
+}
+
+header .header .header-text form a input::-webkit-input-placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+header .header .header-text form a input:-ms-input-placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+header .header .header-text form a input::-ms-input-placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+header .header .header-text form a input::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+header .header .header-text form a img {
+  width: 18px;
+  height: 18px;
+}
+
+.header-content {
+  background-image: url("./../images/delicious-healthy-asian-food-gray-textured-background-with-copy-space_24972-1021.png");
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+.header-content h1 {
+  font-weight: bold;
+}
+
+.profile .acount-options {
+  background-color: #F7F7F7;
+}
+
+.profile .acount-options ul li {
+  padding: 20px;
+}
+
+.profile .profile-data {
+  border: 0.5px solid #707070;
+  padding: 30px;
+}
+
+.profile .profile-data .profile-pic .pic {
+  height: 200px;
+  width: 200px;
+  border: 3px solid #A686F0;
+  border-radius: 50%;
+}
+
+.profile .profile-data .profile-details {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.profile .profile-data .profile-details .detail-group {
+  margin-bottom: 30px;
+}
+
+.profile .profile-data .profile-details .detail-group h5 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.profile .profile-data .profile-details .detail-group p {
+  color: #959595;
+  background-color: #F9F9F9;
+  padding: 10px  20px;
+  border: 0.5px solid #707070;
+  border-radius: 4px;
+}
+
+.profile .profile-data .profile-details .detail-group .fav {
+  margin-top: 35px;
+}
+
+.profile .profile-data .profile-details .detail-group .fav .item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile .profile-data .profile-details .detail-group .fav .item {
+  overflow: hidden;
+  background-color: #EFEFEF;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+
+.profile .profile-data .profile-details .detail-group .fav .item.fav-item {
+  background-color: #A686F0;
+  color: white;
+}
+
+.profile .profile-data .profile-details .detail-group .fav .item span {
+  text-align: center;
+}
+
+footer .upper-footer {
+  padding: 70px 0;
+  background: url("./../images/menu-bg-four.png");
+  background-size: contain;
+  background-position: center center;
+}
+
+@media (max-width: 575.98px) {
+  footer .upper-footer h4 {
+    font-size: 15px;
+  }
+}
+
+footer .upper-footer img {
+  height: 50px;
+}
+
+footer .upper-footer form {
+  border: 1px solid #707070;
+  width: 430px;
+  margin-top: 60px;
+}
+
+@media (max-width: 575.98px) {
+  footer .upper-footer form {
+    margin-top: 10px;
+  }
+}
+
+footer .upper-footer form span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  background-color: #B296F6;
+  border-radius: 0 !important;
+  color: white;
+  height: 100%;
+}
+
+footer .upper-footer form span input::-webkit-input-placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+footer .upper-footer form span input:-ms-input-placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+footer .upper-footer form span input::-ms-input-placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+footer .upper-footer form span input::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+
+footer .upper-footer form span img {
+  width: 18px;
+  height: 18px;
+}
+
+footer .lower-footer {
+  background-color: #A686F0;
+  padding: 20px 0;
+}
+
+footer .lower-footer ul {
+  padding-top: 45px;
+}
+
+footer .lower-footer ul li {
+  margin-left: 20px;
+}
+
+footer .lower-footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+/*# sourceMappingURL=my-profile.css.map */
